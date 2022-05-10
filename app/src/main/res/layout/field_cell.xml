@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <TextView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/markTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="32dp"
+        android:background="?selectableItemBackgroundBorderless"
+        tools:ignore="SpUsage"/>
+
+    <ImageView
+        android:id="@+id/fieldBg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/field_background"
+        android:contentDescription="@string/todo" />
+</RelativeLayout>
+
+
+
+

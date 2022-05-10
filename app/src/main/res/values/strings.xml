@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="log_in">LOG IN</string>
+    <string name="single_player">Single player</string>
+    <string name="local_game">local game</string>
+    <string name="your_nickname">Your nickname</string>
+    <string name="game_on_one_device">game on one device</string>
+    <string name="todo">TODO</string>
+    <string name="helloUser">Hello %1d</string>
+    <string name="this_is_image_background">This is image background</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="tie">Tie</string>
+    <string name="restart">restart</string>
+    <string name="back_to_global_page">back to global page</string>
+</resources>
