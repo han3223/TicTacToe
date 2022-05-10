@@ -11,12 +11,22 @@ import com.example.myapplication.databinding.ActivityMainBinding
 class GameTypeSelection : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var buttonGameOnOneDevice: Button
+    private lateinit var buttonSinglePlayer: Button
+    private lateinit var buttonLocalGame: Button
+    private lateinit var userName: TextView
 
-    @SuppressLint("SetTextI18n")
+
+    @SuppressLint("SetTextI18n", "CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_game_type_selection)
+
+        buttonGameOnOneDevice = findViewById(R.id.gameOnOneDevice)
+        buttonSinglePlayer = findViewById(R.id.singlePlayer)
+        userName = findViewById(R.id.user_name)
+        buttonLocalGame = findViewById(R.id.localGame)
 
         val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
 
@@ -27,12 +37,16 @@ class GameTypeSelection : AppCompatActivity() {
 
 
 
-        findViewById<Button>(R.id.gameOnOneDevice).setOnClickListener {
+        buttonGameOnOneDevice.setOnClickListener {
             val intent = Intent(this, GameOnOneDevice::class.java)
             startActivity(intent)
         }
-        findViewById<Button>(R.id.singlePlayer).setOnClickListener {
+        buttonSinglePlayer.setOnClickListener {
             val intent = Intent(this, SinglePlayer::class.java)
+            startActivity(intent)
+        }
+        buttonLocalGame.setOnClickListener {
+            val intent = Intent(this, RoomsLocalGame::class.java)
             startActivity(intent)
         }
     }

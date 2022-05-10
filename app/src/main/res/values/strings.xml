@@ -13,4 +13,5 @@
     <string name="tie">Tie</string>
     <string name="restart">restart</string>
     <string name="back_to_global_page">back to global page</string>
+    <string name="create_room">Create Room</string>
 </resources>

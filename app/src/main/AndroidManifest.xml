@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".LocalGame"
+            android:exported="false" />
+        <activity
+            android:name=".RoomsLocalGame"
+            android:exported="false" />
+        <activity
             android:name=".SinglePlayer"
             android:exported="false" />
         <activity
