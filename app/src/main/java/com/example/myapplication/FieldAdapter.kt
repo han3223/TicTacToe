@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FieldAdapter(
     private val field: Field,
+    var isClicked: Boolean,
     private val onClick: (row: Int, col: Int) -> Unit
     ) : RecyclerView.Adapter<Vh>() {
 
@@ -19,7 +20,7 @@ class FieldAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
-        return Vh(parent, onClick)
+        return Vh(parent, onClick, isClicked)
     }
 
     override fun onBindViewHolder(holder: Vh, position: Int) {
@@ -31,10 +32,9 @@ class FieldAdapter(
     override fun getItemCount(): Int = field.size * field.size
 }
 
-class Vh(parent: ViewGroup, onClick: (row: Int, col: Int) -> Unit) : RecyclerView.ViewHolder(
+class Vh(parent: ViewGroup, onClick: (row: Int, col: Int) -> Unit, isClicked: Boolean) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.field_cell, parent, false)
 ) {
-
     private val markTv = itemView.findViewById<TextView>(R.id.markTv)
 
     private var row: Int = -1
@@ -42,7 +42,8 @@ class Vh(parent: ViewGroup, onClick: (row: Int, col: Int) -> Unit) : RecyclerVie
 
     init {
         markTv.setOnClickListener {
-            onClick(row, col)
+            if (isClicked)
+                onClick(row, col)
         }
     }
 

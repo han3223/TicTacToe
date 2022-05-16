@@ -30,7 +30,7 @@ class SinglePlayer : AppCompatActivity() {
         }
         findViewById<RecyclerView>(R.id.fieldRv).apply {
             layoutManager = GridLayoutManager(context, game.field.size)
-            adapter = FieldAdapter(game.field) { row, col ->
+            adapter = FieldAdapter(game.field, true) { row, col ->
                 if (game.actSingleGame(row, col)) {
                     adapter?.notifyDataSetChanged()
                     if (game.isFinished) {

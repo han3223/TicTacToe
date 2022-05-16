@@ -12,9 +12,10 @@ interface Game {
     val isFinished: Boolean
     val winner: Boolean?
     val field: Field
+    var userMark: Boolean
     fun actGameOnOneDevice(row: Int, col: Int): Boolean
     fun actSingleGame(row: Int, col: Int): Boolean
-    var userMark: Boolean
+    fun actMultiplayerGame(row: Int, col: Int, mark: Boolean): Boolean
 }
 
 interface Field {
@@ -62,14 +63,21 @@ class GameImp : Game {
         return true
     }
 
-
     override fun actGameOnOneDevice(row: Int, col: Int): Boolean {
+        if (field.get(row, col) != null)
+            return false
+        field.set(row, col, userMark)
+
+        userMark = !userMark
+        return true
+    }
+
+    override fun actMultiplayerGame(row: Int, col: Int, mark: Boolean): Boolean {
         if (field.get(row, col) != null)
             return false
         field.set(row, col, userMark)
         checkWinner()
         checkEnd()
-        userMark = !userMark
         return true
     }
 

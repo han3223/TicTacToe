@@ -33,8 +33,6 @@ class RoomsLocalGame : AppCompatActivity() {
         playerName = sharedPref.getString("PlayerName", "").toString()
         roomName = playerName
 
-        Toast.makeText(applicationContext, playerName, Toast.LENGTH_LONG).show()
-
         listView = findViewById(R.id.listView)
         button = findViewById(R.id.createRoom)
 

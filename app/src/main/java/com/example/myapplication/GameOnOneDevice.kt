@@ -22,7 +22,7 @@ class GameOnOneDevice : AppCompatActivity() {
 
         findViewById<RecyclerView>(R.id.fieldRv).apply {
             layoutManager = GridLayoutManager(context, game.field.size)
-            adapter = FieldAdapter(game.field) { row, col ->
+            adapter = FieldAdapter(game.field, true) { row, col ->
                 if (game.actGameOnOneDevice(row, col)) {
                     adapter?.notifyDataSetChanged()
                     if (game.isFinished) {
