@@ -20,6 +20,7 @@ class GameOnOneDevice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Отображение и взаимодейтвие с полем
         findViewById<RecyclerView>(R.id.fieldRv).apply {
             layoutManager = GridLayoutManager(context, game.field.size)
             adapter = FieldAdapter(game.field, true) { row, col ->
@@ -39,14 +40,17 @@ class GameOnOneDevice : AppCompatActivity() {
             }
         }
 
+        // При нажатии начинает игру заново
         findViewById<Button>(R.id.restart).setOnClickListener {
             startActivity(Intent(this, GameOnOneDevice::class.java))
         }
+        // При нажатии переходит к выбору типа игры
         findViewById<Button>(R.id.back).setOnClickListener {
             startActivity(Intent(this, GameTypeSelection::class.java))
         }
     }
 
+    // Функция помогает определить какой игрок ходит путём смены цвета и размера текста
     private fun checkColorText() {
         val playerOne = findViewById<TextView>(R.id.playerOne)
         val playerTwo = findViewById<TextView>(R.id.playerTwo)
@@ -55,8 +59,7 @@ class GameOnOneDevice : AppCompatActivity() {
             playerOne.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
             playerTwo.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30f)
             playerTwo.setTextColor(Color.BLACK)
-        }
-        else {
+        } else {
             playerOne.setTextColor(Color.BLACK)
             playerOne.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30f)
             playerTwo.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25f)
@@ -65,6 +68,7 @@ class GameOnOneDevice : AppCompatActivity() {
 
     }
 
+    // Функция отображает блок конца игры
     private fun visibleEndBlock(winner: String) {
         findViewById<TextView>(R.id.winnerTextView).text = winner
         val endBlock = findViewById<RelativeLayout>(R.id.endBlock)

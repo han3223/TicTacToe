@@ -10,13 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".LocalGame"
+            android:name=".SinglePlayerHard"
             android:exported="false" />
         <activity
-            android:name=".RoomsLocalGame"
+            android:name=".SinglePlayerNormal"
             android:exported="false" />
         <activity
-            android:name=".SinglePlayer"
+            android:name=".SelectLevelDifficulty"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplayerGame"
+            android:exported="false" />
+        <activity
+            android:name=".RoomsMultiplayerGame"
+            android:exported="false" />
+        <activity
+            android:name=".SinglePlayerEasy"
             android:exported="false" />
         <activity
             android:name=".GameTypeSelection"
@@ -27,7 +36,7 @@
         <activity
             android:name=".GlobalMenu"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

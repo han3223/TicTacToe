@@ -11,34 +11,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
+        android:contentDescription="@string/this_is_image_background"
         android:scaleType="centerCrop"
-        android:src="@drawable/global_bg"
-        android:contentDescription="@string/this_is_image_background" />
-
+        android:src="@drawable/global_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="Here you must enter your nickname"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="@string/your_nickname"
-            android:autofillHints="Here you must enter your nickname" />
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="@string/log_in"
-            tools:ignore="OnClick,UsingOnClickInXml"
-            android:layout_marginTop="25dp"/>
+            tools:ignore="OnClick,UsingOnClickInXml" />
     </LinearLayout>
-
 
 </RelativeLayout>

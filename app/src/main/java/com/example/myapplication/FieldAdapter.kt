@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+// Адаптер для игры (связывает внутренюю логику и внешнее отображение)
 class FieldAdapter(
     private val field: Field,
-    var isClicked: Boolean,
+    private var isClicked: Boolean,
     private val onClick: (row: Int, col: Int) -> Unit
     ) : RecyclerView.Adapter<Vh>() {
 

@@ -13,14 +13,15 @@ import com.google.firebase.database.*
 
 class GlobalMenu : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var playerName: String
 
-    private lateinit var editText: EditText
     private lateinit var button: Button
+    private lateinit var editText: EditText
+
     private lateinit var database: FirebaseDatabase
-    private lateinit var playerRef : DatabaseReference
+    private lateinit var playerRef: DatabaseReference
     private lateinit var sharedPref: SharedPreferences
-    lateinit var playerName: String
+    private lateinit var binding: ActivityMainBinding
 
     @SuppressLint("CutPasteId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +43,15 @@ class GlobalMenu : AppCompatActivity() {
             playerRef.setValue("")
         }
 
+        // Проверка на пользователя, если он есть, то переход в выбор типа игры
+        binding.apply {
+            val userName = sharedPref.getString("PlayerName", null)
+            if (userName != null) {
+                startActivity(Intent(this@GlobalMenu, GameTypeSelection::class.java))
+            }
+        }
+
+        // При нажатии кнопки пользователь регистрируется и данные отправляются в базу данных в реальном времени Firebase
         button.setOnClickListener {
             playerName = editText.text.toString()
             editText.setText("")
@@ -53,32 +63,6 @@ class GlobalMenu : AppCompatActivity() {
                 playerRef.setValue("")
             }
         }
-
-        //val editor = sharedPref.edit()
-
-        /*binding.apply {
-            val userName = sharedPref.getString("user_name", null)
-            if (userName == "" || userName == null) {
-                button.setOnClickListener {
-                    if (editText.text.toString() == "") {
-                        Toast.makeText(applicationContext, "Please enter your nickname", Toast.LENGTH_LONG).show()
-                    }
-                    else {
-                        val intent = Intent(this@GlobalMenu, GameTypeSelection::class.java)
-                        startActivity(intent)
-                        val name = editText.text.toString()
-
-                        editor.apply {
-                            putString("user_name", name)
-                            apply()
-                        }
-                    }
-                }
-            }else{
-                val intent = Intent(this@GlobalMenu, GameTypeSelection::class.java)
-                startActivity(intent)
-            }
-        }*/
     }
 
     private fun addEventListener() {
@@ -107,7 +91,6 @@ class GlobalMenu : AppCompatActivity() {
                 button.isEnabled = true
                 Toast.makeText(this@GlobalMenu, "ERROR", Toast.LENGTH_LONG).show()
             }
-
 
         })
     }

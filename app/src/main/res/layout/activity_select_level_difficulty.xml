@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameTypeSelection">
+    tools:context=".SelectLevelDifficulty">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,40 +17,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="50dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="30dp">
 
         <TextView
-            android:id="@+id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:gravity="center"
-            android:text="@string/helloUser"
+            android:text="@string/select_difficulty"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="40sp" />
 
         <Button
-            android:id="@+id/singlePlayer"
+            android:id="@+id/easy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/single_player" />
+            android:text="@string/easy" />
 
         <Button
-            android:id="@+id/gameOnOneDevice"
+            android:id="@+id/normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/game_on_one_device"
-            tools:ignore="UsingOnClickInXml" />
+            android:text="@string/normal" />
 
         <Button
-            android:id="@+id/localGame"
+            android:id="@+id/hard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/local_game" />
+            android:text="@string/hard" />
 
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/back" />
     </LinearLayout>
 
 </RelativeLayout>

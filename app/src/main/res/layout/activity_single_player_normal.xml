@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,31 +12,17 @@
         android:scaleType="centerCrop"
         android:src="@drawable/global_bg" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="30dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/poke"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/give_result" />
-
-    </LinearLayout>
-
     <TextView
-        android:id="@+id/playerOne"
+        android:id="@+id/userNameNormal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:padding="30dp"
-        android:text="@string/player_1"
+        android:text="@string/helloUser"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:visibility="gone" />
+        android:textSize="40sp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fieldRv"
@@ -47,7 +32,7 @@
         tools:listitem="@layout/field_cell" />
 
     <RelativeLayout
-        android:id="@+id/endBlock"
+        android:id="@+id/endBlockNormal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -64,7 +49,7 @@
             tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/winnerTextView"
+                android:id="@+id/winnerTextViewNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
@@ -74,17 +59,18 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/restart"
+                android:id="@+id/restartNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/restart" />
 
             <Button
-                android:id="@+id/back"
+                android:id="@+id/backNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/back_to_global_page" />
+                android:text="@string/back_to_game_type_selection" />
         </LinearLayout>
 
     </RelativeLayout>
+
 </FrameLayout>

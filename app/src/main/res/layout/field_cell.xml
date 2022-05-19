@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="100dp"
-    android:layout_height="100dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    android:layout_height="100dp">
 
-    <TextView
-        xmlns:tools="http://schemas.android.com/tools"
+    <TextView xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/markTv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textSize="32dp"
         android:background="?selectableItemBackgroundBorderless"
-        tools:ignore="SpUsage"/>
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        tools:ignore="SpUsage" />
 
     <ImageView
         android:id="@+id/fieldBg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/field_background"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"
+        android:src="@drawable/field_background" />
+
 </RelativeLayout>
 
 

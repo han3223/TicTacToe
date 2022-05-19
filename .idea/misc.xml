@@ -9,8 +9,12 @@
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_global_menu.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_local_game.xml" value="0.16545532278751604" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_rooms_local_game.xml" value="0.15391192817443353" />
+        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_rooms_local_game.xml" value="0.5" />
+        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_select_level_difficulty.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_single_player.xml" value="0.28513145965548503" />
+        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_single_player_easy.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_single_player_hard.xml" value="0.1421193573068095" />
+        <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_single_player_normal.xml" value="0.1552444630171333" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/background.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/end_game.xml" value="0.16545532278751604" />
         <entry key="..\:/Users/ivanv/AndroidStudioProjects/MyApplication/app/src/main/res/layout/field_cell.xml" value="0.5" />

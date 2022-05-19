@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RoomsLocalGame">
+    tools:context=".RoomsMultiplayerGame">
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/createRoom"
         android:layout_alignParentTop="true"
-        android:layout_above="@id/createRoom"/>
+        tools:ignore="NotSibling" />
 
-    <Button
-        android:id="@+id/createRoom"
-        android:layout_alignParentBottom="true"
+    <LinearLayout
+        android:id="@+id/n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/create_room" />
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <Button
+            android:id="@+id/createRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_room" />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+    </LinearLayout>
+
 </RelativeLayout>

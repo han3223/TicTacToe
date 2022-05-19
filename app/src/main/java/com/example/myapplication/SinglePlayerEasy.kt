@@ -12,26 +12,32 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ActivityMainBinding
 
-class SinglePlayer : AppCompatActivity() {
+class SinglePlayerEasy : AppCompatActivity() {
+
     private val game: Game = GameImp()
+
     private lateinit var binding: ActivityMainBinding
 
     @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_single_player)
+        setContentView(R.layout.activity_single_player_easy)
 
-        val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("myPref", 0)
 
+        // Загрузка из памяти данных о имени игрока и отображение в тексте
         binding.apply {
-            val userName = sharedPref.getString("user_name", null)
-            findViewById<TextView>(R.id.user_name).text = "$userName plays for ${game.userMark.toMark()}"
+            val userName = sharedPref.getString("PlayerName", null)
+            findViewById<TextView>(R.id.user_name).text = "$userName vs Easy Bot"
         }
+        // Отображение поля и взаимодействие с ним
         findViewById<RecyclerView>(R.id.fieldRv).apply {
             layoutManager = GridLayoutManager(context, game.field.size)
+            adapter?.notifyDataSetChanged()
             adapter = FieldAdapter(game.field, true) { row, col ->
-                if (game.actSingleGame(row, col)) {
+                adapter?.notifyDataSetChanged()
+                if (game.actSingleGameEasy(row, col)) {
                     adapter?.notifyDataSetChanged()
                     if (game.isFinished) {
                         binding.apply {
@@ -48,15 +54,18 @@ class SinglePlayer : AppCompatActivity() {
             }
         }
 
+        // При нажатии запускает игру заново
         findViewById<Button>(R.id.restart).setOnClickListener {
-            startActivity(Intent(this, SinglePlayer::class.java))
+            startActivity(Intent(this, SinglePlayerEasy::class.java))
         }
+        // При нажатии возвращает в выбор типа игры
         findViewById<Button>(R.id.back).setOnClickListener {
             startActivity(Intent(this, GameTypeSelection::class.java))
         }
     }
 
 
+    // Функция отображает блок конца игры
     private fun visibleEndBlock(winner: String) {
         findViewById<TextView>(R.id.winnerTextView).text = winner
         val endBlock = findViewById<RelativeLayout>(R.id.endBlock)

@@ -14,4 +14,12 @@
     <string name="restart">restart</string>
     <string name="back_to_global_page">back to global page</string>
     <string name="create_room">Create Room</string>
+    <string name="change_nickname">change nickname</string>
+    <string name="back">Back</string>
+    <string name="hard">Hard</string>
+    <string name="normal">Normal</string>
+    <string name="easy">Easy</string>
+    <string name="select_difficulty">Select difficulty</string>
+    <string name="give_result">Give result</string>
+    <string name="back_to_game_type_selection">Back to Game type selection</string>
 </resources>
